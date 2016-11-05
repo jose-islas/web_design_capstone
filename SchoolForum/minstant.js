@@ -17,6 +17,9 @@ if (Meteor.isClient) {
     console.log("rendering root /");
     this.render("navbar", {to:"header"});
     this.render("lobby_page", {to:"main"});  
+	//Router.route('/drawingApp', function() {
+    this.render("wall_1", {to:"home_drawing"});
+	//})
   });
 
   // specify a route that allows the current user to chat to another users
@@ -43,8 +46,15 @@ if (Meteor.isClient) {
     }
     this.render("navbar", {to:"header"});
     this.render("chat_page", {to:"main"});  
+	this.render("wall_1", {to:"home_drawing"});
   });
 
+Router.route('/drawingApp', function() {    
+    this.render("navbar", {to:"header"});
+    this.render("chat_page", {to:"main"});  
+    this.render("wall_1", {to:"home_drawing"});
+});  
+  
   ///
   // helper functions 
   /// 
@@ -98,7 +108,7 @@ if (Meteor.isClient) {
     },	
     other_user:function(){
       return ""
-    }, 
+    } 
   })
   
   
@@ -143,8 +153,7 @@ if (Meteor.isClient) {
     }  
   
  })
-
-
+ 
 }
 // start up script that creates some users for testing
 // users have the username 'user1@test.com' .. 'user8@test.com'
@@ -172,6 +181,7 @@ if (Meteor.isServer) {
     if (!Meteor.users.findOne()){
  		Meteor.call("addUsers");
     } 
+
   });
   
   

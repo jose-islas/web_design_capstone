@@ -1,0 +1,29 @@
+<template name="wall_1">
+<head>
+  <title>1-wall</title>
+</head>
+
+<body>
+  {{> wall}}
+</body>
+
+</template>
+<template name="wall">
+  <h4>Drawing-Board</h4>
+  <p><a href="/drawingApp" class="btn btn-default">Start Drawing</a></p>
+  <button class='clear'>Clear</button>
+  <button class='white'>Erase</button>
+  <button class='red'>Red</button>
+  <button class='blue'>Blue</button>
+  <button class='green'>Green</button>
+  <button class='black'>Black</button>
+  <button class='thicker'>Thicker</button>
+  <button class='thinner'>Thinner</button>
+</template>
+
+
+<template name="canvas">
+  <div id='canvas'></div>
+  
+</template>
+

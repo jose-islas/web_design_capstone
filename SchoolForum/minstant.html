@@ -9,8 +9,11 @@
 <template name="ApplicationLayout">
 	{{> yield "header"}}
 	
-	<div class="container">
+	<div class="col-xs-12 col-md-8">
 	{{> yield "main"}}
+	</div>
+	<div class="container">
+	{{> yield "home_drawing"}}
 	</div>
 </template>
 
@@ -24,9 +27,6 @@
       </a>
     </div>
 	<p class="navbar-text navbar-right">{{> loginButtons align="right"}}</p>
-
-
-
   </div>
 </nav>
 </template>
@@ -34,13 +34,13 @@
 <!-- Top level template for the lobby page -->
 <template name="lobby_page">
     <div class="messageBoard">
-	{{> available_user_list}}
+	{{> available_user_list}} 
 	</div>
 </template>
 
 <!-- display a list of users -->
 <template name="available_user_list">
-	<h2>Please SignIn and then, choose someone to chat with:</h2>
+	<h3>Please SignIn and then, choose someone to chat with:</h3>
 	<div class="row">
 	{{#each users}}
 	{{> available_user}}
@@ -113,6 +113,4 @@
 				<img src="{{getEmoji emoticon  }}" class="emoji">
 	<br>
 </template>
-
-
 
